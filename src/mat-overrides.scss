@@ -1,7 +1,9 @@
 @use './mat-override-utils';
 
 #{mat-override-utils.$mat-form-field} {
+  // Calling this mixin without a parameter will set the radius to 0
   @include mat-override-utils.mat-form-field-border-radius;
-  @include mat-override-utils.mat-form-field-label-position-active(5px, 0.7em);
+  @include mat-override-utils.mat-form-field-label-position-active(10px, 10px);
+  @include mat-override-utils.mat-form-field-label-size-active;
 }
 

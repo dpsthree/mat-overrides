@@ -1,18 +1,12 @@
-// Selector Variables
-// These selectors allow team members to customize
-// various properties of Angular Material components
-// without knowing the internal implementation
-
-// MatFormField
-
-// outline
-// Required selector for setting the border radius of a
-// mat-form-field using an "outline" appearance
 $mat-form-field: '.mat-form-field';
 
-// label
+$mat-form-field-legacy: '.mat-form-field-appearance-legacy';
+$mat-form-field-standard: '.mat-form-field-appearance-standard';
+$mat-form-field-fill: '.mat-form-field-appearance-fill';
+$mat-form-field-outline: '.mat-form-field-appearance-outline';
+
 $mat-form-field-label-active: '.mat-form-field-can-float.mat-form-field-should-float label';
-// label outline gap
+
 $mat-form-field-outline-gap: '.mat-form-field-outline-gap';
 
 // Mixins
@@ -34,10 +28,32 @@ $mat-form-field-outline-gap: '.mat-form-field-outline-gap';
   }
 }
 
-// Label position
+// Active Label position
 @mixin mat-form-field-label-position-active($left: 0em, $top: 0em) {
-  &#{$mat-form-field-label-active}{
-    top: calc(30px + #{$top}) !important;
+  // Account for the minor variance in
+  // the various mat form field appearances
+  &#{$mat-form-field-legacy} {
+    &#{$mat-form-field-label-active} {
+      top: calc(13px + #{$top}) !important;
+    }
+  }
+  &#{$mat-form-field-standard} {
+    &#{$mat-form-field-label-active} {
+      top: calc(15px + #{$top}) !important;
+    }
+  }
+  &#{$mat-form-field-fill} {
+    &#{$mat-form-field-label-active} {
+      top: calc(7px + #{$top}) !important;
+    }
+  }
+  &#{$mat-form-field-outline} {
+    &#{$mat-form-field-label-active} {
+      top: calc(30px + #{$top}) !important;
+    }
+  }
+
+  &#{$mat-form-field-label-active} {
     left: $left !important;
     // TODO: see if a parameterized animation can be formed
     // transition: unset !important;
@@ -45,5 +61,12 @@ $mat-form-field-outline-gap: '.mat-form-field-outline-gap';
   // TODO: see if it is possible to move this around with the label
   #{$mat-form-field-outline-gap} {
     width: 0 !important;
+  }
+}
+
+// Active Label Size
+@mixin mat-form-field-label-size-active($size: 14px) {
+  &#{$mat-form-field-label-active} {
+    font-size: $size;
   }
 }
