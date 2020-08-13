@@ -1,5 +1,22 @@
+// Selector Variables
+// These selectors allow team members to customize
+// various properties of Angular Material components
+// without knowing the internal implementation
+
+// MatFormField
+
+// Required selector for setting the border radius of a
+// mat-form-field using an "outline" appearance
 $mat-form-field-outline : '.mat-form-field-outline';
 
+// Mixins
+// Once the target the correct elements these mixins
+// provide the correct property modifications to achieve
+// the desired result
+
+// MatFormField
+
+// Border Radius
 @mixin mat-form-field-border-radius($radius: unset) {
   .mat-form-field-outline-start {
     border-radius: $radius 0 0 $radius !important;
