@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@use './mat-overrides';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  padding: 10px;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+

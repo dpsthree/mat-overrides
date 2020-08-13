@@ -1,0 +1,11 @@
+$mat-form-field-outline : '.mat-form-field-outline';
+
+@mixin mat-form-field-border-radius($radius: unset) {
+  .mat-form-field-outline-start {
+    border-radius: $radius !important;
+  }
+
+  // .mat-form-field-outline-end {
+  //   border-radius: $radius !important
+  // }
+}
