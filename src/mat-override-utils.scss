@@ -17,7 +17,7 @@ $mat-form-field-outline : '.mat-form-field-outline';
 // MatFormField
 
 // Border Radius
-@mixin mat-form-field-border-radius($radius: unset) {
+@mixin mat-form-field-border-radius($radius: 0) {
   .mat-form-field-outline-start {
     border-radius: $radius 0 0 $radius !important;
     width: $radius !important
