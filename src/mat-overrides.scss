@@ -1,5 +1,7 @@
 @use './mat-override-utils';
 
-#{mat-override-utils.$mat-form-field-outline} {
+#{mat-override-utils.$mat-form-field} {
   @include mat-override-utils.mat-form-field-border-radius;
+  @include mat-override-utils.mat-form-field-label-position-active(5px, 0.7em);
 }
+

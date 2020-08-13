@@ -5,9 +5,15 @@
 
 // MatFormField
 
+// outline
 // Required selector for setting the border radius of a
 // mat-form-field using an "outline" appearance
-$mat-form-field-outline : '.mat-form-field-outline';
+$mat-form-field: '.mat-form-field';
+
+// label
+$mat-form-field-label-active: '.mat-form-field-can-float.mat-form-field-should-float label';
+// label outline gap
+$mat-form-field-outline-gap: '.mat-form-field-outline-gap';
 
 // Mixins
 // Once the target the correct elements these mixins
@@ -16,14 +22,28 @@ $mat-form-field-outline : '.mat-form-field-outline';
 
 // MatFormField
 
-// Border Radius
+// outline border radius
 @mixin mat-form-field-border-radius($radius: 0) {
   .mat-form-field-outline-start {
     border-radius: $radius 0 0 $radius !important;
-    width: $radius !important
+    width: $radius !important;
   }
 
   .mat-form-field-outline-end {
-    border-radius: 0 $radius $radius 0 !important
+    border-radius: 0 $radius $radius 0 !important;
+  }
+}
+
+// Label position
+@mixin mat-form-field-label-position-active($left: 0em, $top: 0em) {
+  &#{$mat-form-field-label-active}{
+    top: calc(30px + #{$top}) !important;
+    left: $left !important;
+    // TODO: see if a parameterized animation can be formed
+    // transition: unset !important;
+  }
+  // TODO: see if it is possible to move this around with the label
+  #{$mat-form-field-outline-gap} {
+    width: 0 !important;
   }
 }
