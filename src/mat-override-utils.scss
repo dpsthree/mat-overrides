@@ -5,9 +5,14 @@ $mat-form-field-standard: '.mat-form-field-appearance-standard';
 $mat-form-field-fill: '.mat-form-field-appearance-fill';
 $mat-form-field-outline: '.mat-form-field-appearance-outline';
 
-$mat-form-field-label-active: '.mat-form-field-can-float.mat-form-field-should-float label';
+$mat-form-field-label-float: '.mat-form-field-can-float.mat-form-field-should-float label';
+$mat-form-field-label-active: '.mat-focused label';
+$mat-form-field-label: '.mat-form-field-hide-placeholder label';
 
 $mat-form-field-outline-gap: '.mat-form-field-outline-gap';
+
+$mat-form-field-background: '.mat-form-field-flex';
+$mat-form-field-outline-background: '.mat-form-field-outline';
 
 // Mixins
 // Once the target the correct elements these mixins
@@ -26,34 +31,39 @@ $mat-form-field-outline-gap: '.mat-form-field-outline-gap';
   .mat-form-field-outline-end {
     border-radius: 0 $radius $radius 0 !important;
   }
+
+  #{$mat-form-field-background},
+  #{$mat-form-field-outline-background} {
+    border-radius: $radius !important;
+  }
 }
 
 // Active Label position
-@mixin mat-form-field-label-position-active($left: 0em, $top: 0em) {
+@mixin mat-form-field-label-position-floating($left: 0em, $top: 0em) {
   // Account for the minor variance in
   // the various mat form field appearances
   &#{$mat-form-field-legacy} {
-    &#{$mat-form-field-label-active} {
+    &#{$mat-form-field-label-float} {
       top: calc(13px + #{$top}) !important;
     }
   }
   &#{$mat-form-field-standard} {
-    &#{$mat-form-field-label-active} {
+    &#{$mat-form-field-label-float} {
       top: calc(15px + #{$top}) !important;
     }
   }
   &#{$mat-form-field-fill} {
-    &#{$mat-form-field-label-active} {
+    &#{$mat-form-field-label-float} {
       top: calc(7px + #{$top}) !important;
     }
   }
   &#{$mat-form-field-outline} {
-    &#{$mat-form-field-label-active} {
+    &#{$mat-form-field-label-float} {
       top: calc(30px + #{$top}) !important;
     }
   }
 
-  &#{$mat-form-field-label-active} {
+  &#{$mat-form-field-label-float} {
     left: $left !important;
     // TODO: see if a parameterized animation can be formed
     // transition: unset !important;
@@ -64,9 +74,49 @@ $mat-form-field-outline-gap: '.mat-form-field-outline-gap';
   }
 }
 
-// Active Label Size
-@mixin mat-form-field-label-size-active($size: 14px) {
-  &#{$mat-form-field-label-active} {
+// Float Label Size
+@mixin mat-form-field-label-size-float($size: 14px) {
+  &#{$mat-form-field-label-float} {
     font-size: $size;
+  }
+}
+
+@mixin mat-form-field-label-weight-float($weight: normal) {
+  &#{$mat-form-field-label-float} {
+    font-weight: $weight;
+  }
+}
+
+@mixin mat-form-field-label-weight($weight: normal) {
+  &#{$mat-form-field-label} {
+    font-weight: $weight;
+  }
+}
+
+@mixin mat-form-field-label-color-float($color: black) {
+  &#{$mat-form-field-label-float} {
+    color: $color;
+  }
+}
+
+@mixin mat-form-field-label-color($color: black) {
+  &#{$mat-form-field-label} {
+    color: $color;
+  }
+}
+
+@mixin mat-form-field-background-color($color: white) {
+  #{$mat-form-field-background} {
+    background-color: $color;
+  }
+
+  &#{$mat-form-field-outline} {
+    #{$mat-form-field-background} {
+      background-color: unset;
+    }
+
+    #{$mat-form-field-outline-background} {
+      background-color: $color;
+    }
   }
 }
