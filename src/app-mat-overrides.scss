@@ -1,6 +1,6 @@
 @use './customize-mat';
 
-#{customize-mat.$mat-form-field} {
+#{customize-mat.$form-field} {
   // Calling this mixin without a parameter will set the radius to 0
   @include customize-mat.form-field-border-radius;
   @include customize-mat.form-field-label-position-floating(10px, 10px);
@@ -10,5 +10,6 @@
   @include customize-mat.form-field-label-color-float(pink);
   @include customize-mat.form-field-label-color(green);
   @include customize-mat.form-field-background-color(lightgrey);
+  @include customize-mat.form-field-value-size(25px);
 }
 

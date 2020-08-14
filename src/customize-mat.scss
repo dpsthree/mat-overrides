@@ -1,27 +1,23 @@
-$mat-form-field: '.mat-form-field';
+$form-field: '.mat-form-field';
 
-$mat-form-field-legacy: '.mat-form-field-appearance-legacy';
-$mat-form-field-standard: '.mat-form-field-appearance-standard';
-$mat-form-field-fill: '.mat-form-field-appearance-fill';
-$mat-form-field-outline: '.mat-form-field-appearance-outline';
+$form-field-legacy: '.mat-form-field-appearance-legacy';
+$form-field-standard: '.mat-form-field-appearance-standard';
+$form-field-fill: '.mat-form-field-appearance-fill';
+$form-field-outline: '.mat-form-field-appearance-outline';
 
-$mat-form-field-label-float: '.mat-form-field-can-float.mat-form-field-should-float label';
-$mat-form-field-label-active: '.mat-focused label';
-$mat-form-field-label: '.mat-form-field-hide-placeholder label';
+$form-field-label-float: '.mat-form-field-can-float.mat-form-field-should-float label';
+$form-field-label-active: '.mat-focused label';
+$form-field-label: '.mat-form-field-hide-placeholder label';
 
-$mat-form-field-outline-gap: '.mat-form-field-outline-gap';
+$form-field-outline-gap: '.mat-form-field-outline-gap';
+$form-field-outline-background: '.mat-form-field-outline';
 
-$mat-form-field-background: '.mat-form-field-flex';
-$mat-form-field-outline-background: '.mat-form-field-outline';
+$form-field-background: '.mat-form-field-flex';
+
+$form-field-value: '';
 
 // Mixins
-// Once the target the correct elements these mixins
-// provide the correct property modifications to achieve
-// the desired result
 
-// MatFormField
-
-// outline border radius
 @mixin form-field-border-radius($radius: 0) {
   .mat-form-field-outline-start {
     border-radius: $radius 0 0 $radius !important;
@@ -32,90 +28,89 @@ $mat-form-field-outline-background: '.mat-form-field-outline';
     border-radius: 0 $radius $radius 0 !important;
   }
 
-  #{$mat-form-field-background},
-  #{$mat-form-field-outline-background} {
+  #{$form-field-background},
+  #{$form-field-outline-background} {
     border-radius: $radius !important;
   }
 }
 
-// Active Label position
 @mixin form-field-label-position-floating($left: 0em, $top: 0em) {
   // Account for the minor variance in
   // the various mat form field appearances
-  &#{$mat-form-field-legacy} {
-    &#{$mat-form-field-label-float} {
+  &#{$form-field-legacy} {
+    &#{$form-field-label-float} {
       top: calc(13px + #{$top}) !important;
     }
   }
-  &#{$mat-form-field-standard} {
-    &#{$mat-form-field-label-float} {
+  &#{$form-field-standard} {
+    &#{$form-field-label-float} {
       top: calc(15px + #{$top}) !important;
     }
   }
-  &#{$mat-form-field-fill} {
-    &#{$mat-form-field-label-float} {
+  &#{$form-field-fill} {
+    &#{$form-field-label-float} {
       top: calc(7px + #{$top}) !important;
     }
   }
-  &#{$mat-form-field-outline} {
-    &#{$mat-form-field-label-float} {
+  &#{$form-field-outline} {
+    &#{$form-field-label-float} {
       top: calc(30px + #{$top}) !important;
     }
   }
 
-  &#{$mat-form-field-label-float} {
+  &#{$form-field-label-float} {
     left: $left !important;
     // TODO: see if a parameterized animation can be formed
     // transition: unset !important;
   }
   // TODO: see if it is possible to move this around with the label
-  #{$mat-form-field-outline-gap} {
+  // instead of just removing it
+  #{$form-field-outline-gap} {
     width: 0 !important;
   }
 }
 
-// Float Label Size
 @mixin form-field-label-size-float($size: 14px) {
-  &#{$mat-form-field-label-float} {
+  &#{$form-field-label-float} {
     font-size: $size;
   }
 }
 
 @mixin form-field-label-weight-float($weight: normal) {
-  &#{$mat-form-field-label-float} {
+  &#{$form-field-label-float} {
     font-weight: $weight;
   }
 }
 
 @mixin form-field-label-weight($weight: normal) {
-  &#{$mat-form-field-label} {
+  &#{$form-field-label} {
     font-weight: $weight;
   }
 }
 
 @mixin form-field-label-color-float($color: black) {
-  &#{$mat-form-field-label-float} {
+  &#{$form-field-label-float} {
     color: $color;
   }
 }
 
 @mixin form-field-label-color($color: black) {
-  &#{$mat-form-field-label} {
+  &#{$form-field-label} {
     color: $color;
   }
 }
 
 @mixin form-field-background-color($color: white) {
-  #{$mat-form-field-background} {
+  #{$form-field-background} {
     background-color: $color;
   }
 
-  &#{$mat-form-field-outline} {
-    #{$mat-form-field-background} {
+  &#{$form-field-outline} {
+    #{$form-field-background} {
       background-color: unset;
     }
 
-    #{$mat-form-field-outline-background} {
+    #{$form-field-outline-background} {
       background-color: $color;
     }
   }
