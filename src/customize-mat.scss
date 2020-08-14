@@ -22,7 +22,7 @@ $mat-form-field-outline-background: '.mat-form-field-outline';
 // MatFormField
 
 // outline border radius
-@mixin mat-form-field-border-radius($radius: 0) {
+@mixin form-field-border-radius($radius: 0) {
   .mat-form-field-outline-start {
     border-radius: $radius 0 0 $radius !important;
     width: $radius !important;
@@ -39,7 +39,7 @@ $mat-form-field-outline-background: '.mat-form-field-outline';
 }
 
 // Active Label position
-@mixin mat-form-field-label-position-floating($left: 0em, $top: 0em) {
+@mixin form-field-label-position-floating($left: 0em, $top: 0em) {
   // Account for the minor variance in
   // the various mat form field appearances
   &#{$mat-form-field-legacy} {
@@ -75,37 +75,37 @@ $mat-form-field-outline-background: '.mat-form-field-outline';
 }
 
 // Float Label Size
-@mixin mat-form-field-label-size-float($size: 14px) {
+@mixin form-field-label-size-float($size: 14px) {
   &#{$mat-form-field-label-float} {
     font-size: $size;
   }
 }
 
-@mixin mat-form-field-label-weight-float($weight: normal) {
+@mixin form-field-label-weight-float($weight: normal) {
   &#{$mat-form-field-label-float} {
     font-weight: $weight;
   }
 }
 
-@mixin mat-form-field-label-weight($weight: normal) {
+@mixin form-field-label-weight($weight: normal) {
   &#{$mat-form-field-label} {
     font-weight: $weight;
   }
 }
 
-@mixin mat-form-field-label-color-float($color: black) {
+@mixin form-field-label-color-float($color: black) {
   &#{$mat-form-field-label-float} {
     color: $color;
   }
 }
 
-@mixin mat-form-field-label-color($color: black) {
+@mixin form-field-label-color($color: black) {
   &#{$mat-form-field-label} {
     color: $color;
   }
 }
 
-@mixin mat-form-field-background-color($color: white) {
+@mixin form-field-background-color($color: white) {
   #{$mat-form-field-background} {
     background-color: $color;
   }
