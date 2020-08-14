@@ -2,7 +2,11 @@
 
 #{custom-mat.$form-field} {
   // Calling this mixin without a parameter will set the radius to 0
+  // Border properties only work when using the appearance="outline" variant
+  // of mat-form-field
   @include custom-mat.form-field-border-radius;
+  @include custom-mat.form-field-border(1px solid green);
+  @include custom-mat.form-field-border-active(3px solid black);
   @include custom-mat.form-field-label-position-initial(10px, 10px);
   @include custom-mat.form-field-label-position-floating(10px, 10px);
   @include custom-mat.form-field-label-size-float(16px);
