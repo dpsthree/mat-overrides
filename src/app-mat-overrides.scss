@@ -16,5 +16,6 @@
   @include custom-mat.form-field-label-color(green);
   @include custom-mat.form-field-background-color(lightgrey);
   @include custom-mat.form-field-value-size(25px);
+  @include custom-mat.form-field-padding(5px 5px 5px 5px);
 }
 

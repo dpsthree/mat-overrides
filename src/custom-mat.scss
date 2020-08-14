@@ -2,6 +2,11 @@ $form-field: '.mat-form-field';
 
 $form-field-focused: '.mat-focused';
 
+// Containers for both the label and input content
+// Usage depends upon appearance type of form field
+$form-field-infix: '.mat-form-field-infix';
+$form-field-flex: '.mat-form-field-flex';
+
 $form-field-legacy: '.mat-form-field-appearance-legacy';
 $form-field-standard: '.mat-form-field-appearance-standard';
 $form-field-fill: '.mat-form-field-appearance-fill';
@@ -49,7 +54,7 @@ $form-field-value: 'input';
 }
 
 @mixin form-field-border-active($border: 1px solid black) {
-  &#{$form-field-focused}{
+  &#{$form-field-focused} {
     .mat-form-field-outline-start {
       border: $border !important;
       border-right-style: none !important;
@@ -194,5 +199,15 @@ $form-field-value: 'input';
 @mixin form-field-value-size($size: 14px) {
   #{$form-field-value} {
     font-size: $size;
+  }
+}
+
+@mixin form-field-padding($padding: 1em 0 1em 0) {
+  #{$form-field-infix} {
+    padding: 0 0 0 0;
+  }
+
+  #{$form-field-flex} {
+    padding: $padding !important;
   }
 }
