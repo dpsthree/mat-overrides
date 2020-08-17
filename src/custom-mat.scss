@@ -22,7 +22,7 @@ $form-field-outline-background: '.mat-form-field-outline';
 $form-field-background: '.mat-form-field-flex';
 
 $form-field-value: 'input';
-
+$form-field-select-value: '.mat-select-value-text';
 // Mixins
 
 @mixin form-field-border-radius($radius: 0) {
@@ -206,6 +206,10 @@ $form-field-value: 'input';
 
 @mixin form-field-value-size($size: 14px) {
   #{$form-field-value} {
+    font-size: $size;
+  }
+
+  #{$form-field-select-value} {
     font-size: $size;
   }
 }
