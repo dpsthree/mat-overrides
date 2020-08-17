@@ -23,7 +23,10 @@ $form-field-background: '.mat-form-field-flex';
 
 $form-field-value: 'input';
 $form-field-select-value: '.mat-select-value-text';
+
 // Mixins
+
+// -------------- Form Fields -------------------
 
 @mixin form-field-border-radius($radius: 0) {
   .mat-form-field-outline-start {
@@ -59,7 +62,7 @@ $form-field-select-value: '.mat-select-value-text';
   }
 }
 
-@mixin form-field-border-active($border: 1px solid black) {
+@mixin form-field-active-border($border: 1px solid black) {
   &#{$form-field-focused} {
     .mat-form-field-outline-start {
       border: $border !important;
@@ -79,7 +82,7 @@ $form-field-select-value: '.mat-select-value-text';
   }
 }
 
-@mixin form-field-label-position-initial($left: 0em, $top: 0em) {
+@mixin form-field-label-initial-position($left: 0em, $top: 0em) {
   // Account for the minor variance in
   // the various mat form field appearances
   &#{$form-field-legacy} {
@@ -112,7 +115,7 @@ $form-field-select-value: '.mat-select-value-text';
     left: $left !important;
   }
 }
-@mixin form-field-label-position-floating($left: 0em, $top: 0em) {
+@mixin form-field-label-floating-position($left: 0em, $top: 0em) {
   // Account for the minor variance in
   // the various mat form field appearances
   &#{$form-field-legacy} {
@@ -158,13 +161,13 @@ $form-field-select-value: '.mat-select-value-text';
   }
 }
 
-@mixin form-field-label-size-float($size: 14px) {
+@mixin form-field-label-float-size($size: 14px) {
   &#{$form-field-label-float} {
     font-size: $size;
   }
 }
 
-@mixin form-field-label-weight-float($weight: normal) {
+@mixin form-field-label-float-weight($weight: normal) {
   &#{$form-field-label-float} {
     font-weight: $weight;
   }
@@ -176,7 +179,7 @@ $form-field-select-value: '.mat-select-value-text';
   }
 }
 
-@mixin form-field-label-color-float($color: black) {
+@mixin form-field-label-float-color($color: black) {
   &#{$form-field-label-float} {
     color: $color;
   }
@@ -222,4 +225,14 @@ $form-field-select-value: '.mat-select-value-text';
   #{$form-field-flex} {
     padding: $padding !important;
   }
+}
+
+//--------------------------------------------
+//------------ Select ------------------------
+@mixin select-arrow-color($color: black){
+
+}
+
+@mixin select-arrow-color($color: black){
+
 }
