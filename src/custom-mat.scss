@@ -13,7 +13,7 @@ $form-field-fill: '.mat-form-field-appearance-fill';
 $form-field-outline: '.mat-form-field-appearance-outline';
 
 $form-field-label-float: '.mat-form-field-can-float.mat-form-field-should-float label';
-$form-field-label-focused: '.mat-focused label';
+$form-field-label-focused: '#{$form-field-focused} label';
 $form-field-label: '.mat-form-field-hide-placeholder label';
 
 $form-field-outline-gap: '.mat-form-field-outline-gap';
@@ -21,8 +21,10 @@ $form-field-outline-background: '.mat-form-field-outline';
 
 $form-field-background: '.mat-form-field-flex';
 
-$form-field-value: 'input';
-$form-field-select-value: '.mat-select-value-text';
+$input-value: 'input';
+
+$select-value: '.mat-select-value-text';
+$select-arrow: '.mat-select-arrow';
 
 // Mixins
 
@@ -208,11 +210,11 @@ $form-field-select-value: '.mat-select-value-text';
 }
 
 @mixin form-field-value-size($size: 14px) {
-  #{$form-field-value} {
+  #{$input-value} {
     font-size: $size;
   }
 
-  #{$form-field-select-value} {
+  #{$select-value} {
     font-size: $size;
   }
 }
@@ -229,10 +231,16 @@ $form-field-select-value: '.mat-select-value-text';
 
 //--------------------------------------------
 //------------ Select ------------------------
-@mixin select-arrow-color($color: black){
 
+@mixin select-arrow-color($color: black) {
+  #{$select-arrow} {
+    color: $color;
+  }
 }
 
-@mixin select-arrow-color($color: black){
-
+@mixin select-arrow-focused-color($color: black) {
+  &#{$form-field-focused} #{$select-arrow} {
+      color: $color !important;
+  }
 }
+//-------------------------------------------
