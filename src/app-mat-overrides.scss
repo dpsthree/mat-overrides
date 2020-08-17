@@ -10,7 +10,7 @@
   // Label floating illusion will be "broken"
   // Only works with appearance="outline"
   @include custom-mat.form-field-border(1px solid green);
-  @include custom-mat.form-field-active-border(3px solid black);
+  @include custom-mat.form-field-focused-border(3px solid black);
 
   @include custom-mat.form-field-label-initial-position(10px, 10px);
   // Limitation - works with select, but position of open drop down

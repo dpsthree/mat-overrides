@@ -64,7 +64,7 @@ $select-arrow: '.mat-select-arrow';
   }
 }
 
-@mixin form-field-active-border($border: 1px solid black) {
+@mixin form-field-focused-border($border: 1px solid black) {
   &#{$form-field-focused} {
     .mat-form-field-outline-start {
       border: $border !important;
