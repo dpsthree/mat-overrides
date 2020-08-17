@@ -83,6 +83,9 @@ $form-field-select-value: '.mat-select-value-text';
 }
 
 @mixin form-field-label-initial-position($left: 0em, $top: 0em) {
+  .mat-form-field-label-wrapper {
+    top: -20px !important;
+  }
   // Account for the minor variance in
   // the various mat form field appearances
   &#{$form-field-legacy} {
@@ -91,17 +94,12 @@ $form-field-select-value: '.mat-select-value-text';
     }
   }
   &#{$form-field-standard} {
-    .mat-form-field-label-wrapper {
-      top: -22px !important;
-    }
+
     &#{$form-field-label} {
       top: $top !important;
     }
   }
   &#{$form-field-fill} {
-    .mat-form-field-label-wrapper {
-      top: -20px !important;
-    }
 
     &#{$form-field-label} {
       top: calc(5px + #{$top}) !important;
@@ -116,6 +114,9 @@ $form-field-select-value: '.mat-select-value-text';
   }
 }
 @mixin form-field-label-floating-position($left: 0em, $top: 0em) {
+  .mat-form-field-label-wrapper {
+    top: -20px !important;
+  }
   // Account for the minor variance in
   // the various mat form field appearances
   &#{$form-field-legacy} {
@@ -127,24 +128,15 @@ $form-field-select-value: '.mat-select-value-text';
     &#{$form-field-label-float} {
       top: calc(15px + #{$top}) !important;
     }
-    .mat-form-field-label-wrapper {
-      top: -22px !important;
-    }
   }
   &#{$form-field-fill} {
     &#{$form-field-label-float} {
       top: calc(10px + #{$top}) !important;
     }
-    .mat-form-field-label-wrapper {
-      top: -20px !important;
-    }
   }
   &#{$form-field-outline} {
     &#{$form-field-label-float} {
-      top: calc(22px + #{$top}) !important;
-    }
-    .mat-form-field-label-wrapper {
-      top: -8px !important;
+      top: calc(26px + #{$top}) !important;
     }
   }
 
