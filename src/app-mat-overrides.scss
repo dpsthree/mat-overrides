@@ -5,17 +5,34 @@
   // Border properties only work when using the appearance="outline" variant
   // of mat-form-field
   @include custom-mat.form-field-border-radius;
-  @include custom-mat.form-field-border(1px solid green);
-  @include custom-mat.form-field-border-active(3px solid black);
+
+  // Setting a border will force that border to always be present
+  // Label floating illusion will be "broken"
+  // Only works with appearance="outline"
+  // @include custom-mat.form-field-border(1px solid green);
+  // @include custom-mat.form-field-border-active(3px solid black);
+
   @include custom-mat.form-field-label-position-initial(10px, 10px);
-  @include custom-mat.form-field-label-position-floating(10px, 10px);
-  @include custom-mat.form-field-label-size-float(16px);
-  @include custom-mat.form-field-label-weight(lighter);
-  @include custom-mat.form-field-label-weight-float(bold);
-  @include custom-mat.form-field-label-color-float(black);
-  @include custom-mat.form-field-label-color(green);
-  @include custom-mat.form-field-background-color(lightgrey);
-  @include custom-mat.form-field-value-size(25px);
-  @include custom-mat.form-field-padding(5px 5px 5px 5px);
+  // @include custom-mat.form-field-label-position-floating(10px, 10px);
+
+  // Limitation: setting the label-size breaks the
+  // "float" illusion. Set the floating position as well to turn off
+  // the float characteristic and directly position the float location
+  // @include custom-mat.form-field-label-size-float(26px);
+
+  // @include custom-mat.form-field-label-weight(lighter);
+  // @include custom-mat.form-field-label-weight-float(bold);
+  // @include custom-mat.form-field-label-color-float(black);
+  // @include custom-mat.form-field-label-color(green);
+
+  // Limitation: Floating labels may float outside of the colored
+  // area
+  // @include custom-mat.form-field-background-color(lightgrey);
+
+  // @include custom-mat.form-field-value-size(35px);
+
+  // Limitation: initial label position/size will likely need to
+  // be adjusted when using this knob.
+  // @include custom-mat.form-field-padding(5px 5px 5px 5px);
 }
 

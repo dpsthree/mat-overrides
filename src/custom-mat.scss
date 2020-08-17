@@ -51,6 +51,12 @@ $form-field-value: 'input';
     border: $border !important;
     border-left-style: none !important;
   }
+
+  .mat-form-field-outline-gap {
+    border: $border !important;
+    border-left-style: none !important;
+    border-right-style: none !important;
+  }
 }
 
 @mixin form-field-border-active($border: 1px solid black) {
@@ -63,6 +69,12 @@ $form-field-value: 'input';
     .mat-form-field-outline-end {
       border: $border !important;
       border-left-style: none !important;
+    }
+
+    .mat-form-field-outline-gap {
+      border: $border !important;
+      border-left-style: none !important;
+      border-right-style: none !important;
     }
   }
 }
@@ -92,13 +104,8 @@ $form-field-value: 'input';
       top: calc(5px + #{$top}) !important;
     }
   }
-  &#{$form-field-outline} {
-    .mat-form-field-label-wrapper {
-      top: -8px !important;
-    }
-    &#{$form-field-label} {
-      top: calc(2px + #{$top}) !important;
-    }
+  &#{$form-field-outline}#{$form-field-label} {
+    top: calc(5px + #{$top}) !important;
   }
 
   &#{$form-field-label} {
@@ -143,8 +150,9 @@ $form-field-value: 'input';
     // TODO: see if a parameterized animation can be formed
     // transition: unset !important;
   }
-  // TODO: see if it is possible to move this around with the label
-  // instead of just removing it
+  // TODO: figure out how to place the gap
+  // only if the position of the lable is in conflict
+  // with the border
   #{$form-field-outline-gap} {
     width: 0 !important;
   }
