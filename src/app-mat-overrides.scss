@@ -9,29 +9,29 @@
   // Setting a border will force that border to always be present
   // Label floating illusion will be "broken"
   // Only works with appearance="outline"
-  @include custom-mat.form-field-border(1px solid green);
-  @include custom-mat.form-field-focused-border(3px solid black);
+  @include custom-mat.form-field-border(1px solid black);
+  // @include custom-mat.form-field-focused-border(3px solid black);
 
-  @include custom-mat.form-field-label-initial-position(10px, 10px);
+  // @include custom-mat.form-field-label-initial-position(10px, 10px);
   // Limitation - works with select, but position of open drop down
   // covers most custom label positions
-  @include custom-mat.form-field-label-floating-position(10px, 10px);
+  @include custom-mat.form-field-label-floating-position(0px, 10px);
 
   // Limitation: setting the label-size breaks the
   // "float" illusion. Set the floating position as well to turn off
   // the float characteristic and directly position the float location
-  @include custom-mat.form-field-label-float-size(16px);
+  // @include custom-mat.form-field-label-float-size(16px);
 
   @include custom-mat.form-field-label-weight(lighter);
   @include custom-mat.form-field-label-float-weight(bold);
   @include custom-mat.form-field-label-float-color(black);
-  @include custom-mat.form-field-label-color(green);
+  @include custom-mat.form-field-label-color(black);
 
   // Limitation: Floating labels may float outside of the colored
   // area
   @include custom-mat.form-field-background-color(lightgrey);
 
-  @include custom-mat.form-field-value-size(35px);
+  // @include custom-mat.form-field-value-size(35px);
 
   // Limitation: initial label position/size will likely need to
   // be adjusted when using this knob.
